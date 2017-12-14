@@ -1,2 +1,2 @@
----
-# defaults file for docker
+docker_machine_version: '0.13.0'
+docker_compose_version: '1.17.0'

@@ -1,0 +1,44 @@
+- name: "docker-compose: Ensure this role is running on Ubuntu/Debian"
+  assert:
+    that: ansible_os_family == "Debian"
+    msg: "This role only works for Ubuntu/Debian. To install Docker on Mac use GUI installer"
+
+- name: "docker-compose: Build prequisites variables"
+  set_fact:
+    c_install_base_url: "https://github.com/docker/compose/releases/download"
+    c_completion_base_url: "https://raw.githubusercontent.com/docker/compose"
+    c_version: "{{ docker_compose_version }}"
+    c_uname_m: "{{ ansible_machine }}"
+    c_uname_s: "{{ ansible_system }}"
+    c_completion_dir: "{{ ansible_env.HOME }}/.zsh/completion"
+    c_completion_file: "_docker-compose"
+
+- name: "docker-compose: Build URL"
+  set_fact:
+    compose_install_url: >
+      {{ c_install_base_url }}/{{ c_version }}/docker-compose-{{ c_uname_s }}-{{ c_uname_m }}
+    compose_completion_url: >
+      {{ c_completion_base_url }}/{{ c_version }}/contrib/completion/zsh/{{ c_completion_file }}
+
+- name: "docker-compose: Install"
+  get_url:
+    url: "{{ compose_install_url }}"
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
+  become: yes
+
+- name: "docker-compose: Completion"
+  become: yes
+  block:
+    - name: "docker-compose: Completion 1/2 - Create directory"
+      file:
+        path: "{{ c_completion_dir }}"
+        state: directory
+        mode: 0755
+        recurse: yes
+
+    - name: "docker-compose: Completion 2/2 - Install completion"
+      get_url:
+        url: "{{ compose_completion_url }}"
+        dest: "{{ c_completion_dir }}"
+        mode: 0755
