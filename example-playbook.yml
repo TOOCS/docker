@@ -1,0 +1,6 @@
+
+# TODO: Rename to 'sandbox'
+- hosts: hello
+  roles:
+  - role: FlorianKempenich.docker
+
