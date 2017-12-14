@@ -1,6 +1,14 @@
-
-# TODO: Rename to 'sandbox'
-- hosts: hello
+- hosts: sandbox
   roles:
-  - role: FlorianKempenich.docker
-
+     - FlorianKempenich.docker
+  tasks:
+    - include_role:
+        name: FlorianKempenich.docker
+        tasks_from: dockercompose.yml
+      vars:
+        docker_compose_version: '1.17.0'
+    - include_role:
+        name: FlorianKempenich.docker
+        tasks_from: dockermachine.yml
+      vars:
+        docker_machine_version: '0.13.0'
