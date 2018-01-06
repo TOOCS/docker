@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/FlorianKempenich/docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/ansible-role-docker) [![Ansible Role](https://img.shields.io/ansible/role/22557.svg)](https://galaxy.ansible.com/FlorianKempenich/docker)
+[![Build Status](https://travis-ci.org/FlorianKempenich/docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/ansible-role-docker) [![Ansible Role](https://img.shields.io/ansible/role/22817.svg)](https://galaxy.ansible.com/FlorianKempenich/docker)
 
 # Ansible role: `docker`
 Install Docker on Ubuntu. And optionally `docker-compose` and `docker-machine`.
