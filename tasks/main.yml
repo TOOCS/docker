@@ -33,3 +33,11 @@
         name: docker-ce
         update_cache: yes
         state: latest
+
+    - name: "Add current User to the `docker` group"
+      # This allows to run the `docker` commands without having to use `sudo`
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+      become: yes
