@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/FlorianKempenich/TOOCS-docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/TOOCS-docker) [![Ansible Role](https://img.shields.io/ansible/role/22817.svg)](https://galaxy.ansible.com/FlorianKempenich/toocs_docker)
+[![Build Status](https://travis-ci.org/FlorianKempenich/TOOCS-docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/TOOCS-docker) [![Ansible Role](https://img.shields.io/ansible/role/36107.svg)](https://galaxy.ansible.com/FlorianKempenich/toocs_docker)
 
 # TOOCS / Ansible Role: `toocs_docker`
 Install Docker on Ubuntu. And optionally `docker-compose` and `docker-machine`.
