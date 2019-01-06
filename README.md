@@ -1,8 +1,14 @@
-[![Build Status](https://travis-ci.org/FlorianKempenich/ansible-role-docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/ansible-role-docker) [![Ansible Role](https://img.shields.io/ansible/role/22817.svg)](https://galaxy.ansible.com/FlorianKempenich/docker)
+[![Build Status](https://travis-ci.org/FlorianKempenich/TOOCS-docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/TOOCS-docker) [![Ansible Role](https://img.shields.io/ansible/role/22817.svg)](https://galaxy.ansible.com/FlorianKempenich/toocs_docker)
 
-# Ansible role: `docker`
+# TOOCS / Ansible Role: `toocs_docker`
 Install Docker on Ubuntu. And optionally `docker-compose` and `docker-machine`.
 Also sets up completion for `zsh`
+
+> ### TOOCS?
+> TOOCS - The Opinionated One-Click Setups are a set of tools / ansible roles designed to setup a system in one click. They are a simple, reliable, way to setup a given tool. You can use them as is, or, inspecting their code, as a tutorial to follow step by step.
+> 
+> They are, as their name suggests, opinionated: while they guarantee to setup the given tool in one click, they do **not** guarantee consistency in _how_ they achieve it, new releases might introduce breaking changes.  
+> Read the code and make sure you understand what's happening!
 
 ## Requirements
 This role is only working on Ubuntu / Debian.
@@ -20,17 +26,17 @@ To install only install `docker`:
 
     - hosts: sandbox
       roles:
-         - FlorianKempenich.docker
+         - FlorianKempenich.toocs_docker
 
 To install `docker-compose` / `docker-machine`:
 
     - hosts: sandbox
       tasks:
         - include_role:
-            name: FlorianKempenich.docker
+            name: FlorianKempenich.toocs_docker
             tasks_from: dockercompose.yml
         - include_role:
-            name: FlorianKempenich.docker
+            name: FlorianKempenich.toocs_docker
             tasks_from: dockermachine.yml
 
 To install a specific version of `docker-compose` / `docker-machine`:
@@ -38,7 +44,7 @@ To install a specific version of `docker-compose` / `docker-machine`:
     - hosts: sandbox
       tasks:
         - include_role:
-            name: FlorianKempenich.docker
+            name: FlorianKempenich.toocs_docker
             tasks_from: dockercompose.yml
           vars:
             docker_compose_version: '1.17.0'
