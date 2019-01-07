@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/FlorianKempenich/TOOCS-docker.svg?branch=master)](https://travis-ci.org/FlorianKempenich/TOOCS-docker) [![Ansible Role](https://img.shields.io/ansible/role/36107.svg)](https://galaxy.ansible.com/FlorianKempenich/toocs_docker)
+[![Build Status](https://travis-ci.org/TOOCS/docker.svg?branch=master)](https://travis-ci.org/TOOCS/docker) [![Ansible Role](https://img.shields.io/ansible/role/36107.svg)](https://galaxy.ansible.com/FlorianKempenich/toocs_docker)
 
-# TOOCS / Ansible Role: `toocs_docker`
+# TOOCS / Ansible Role: `FlorianKempenich.toocs_docker`
 Install Docker on Ubuntu. And optionally `docker-compose` and `docker-machine`.
 Also sets up completion for `zsh`
 
