@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/TOOCS/docker.svg?branch=master)](https://travis-ci.org/TOOCS/docker) [![Ansible Role](https://img.shields.io/ansible/role/36155.svg)](https://galaxy.ansible.com/TOOCS/docker)
+[![Build Status](https://travis-ci.org/TOOCS/docker.svg?branch=master)](https://travis-ci.org/TOOCS/docker) [![Ansible Role](https://img.shields.io/ansible/role/36200.svg)](https://galaxy.ansible.com/TOOCS/docker)
 
 # TOOCS / Ansible Role: `TOOCS.docker`
 > #### /!\ This role has been renamed - Old name: `FlorianKempenich.docker` /!\
