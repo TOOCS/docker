@@ -1,6 +1,8 @@
-[![Build Status](https://travis-ci.org/TOOCS/docker.svg?branch=master)](https://travis-ci.org/TOOCS/docker) [![Ansible Role](https://img.shields.io/ansible/role/36155.svg)](https://galaxy.ansible.com/FlorianKempenich/toocs_docker)
+[![Build Status](https://travis-ci.org/TOOCS/docker.svg?branch=master)](https://travis-ci.org/TOOCS/docker) [![Ansible Role](https://img.shields.io/ansible/role/36155.svg)](https://galaxy.ansible.com/TOOCS/docker)
 
-# TOOCS / Ansible Role: `FlorianKempenich.toocs_docker`
+# TOOCS / Ansible Role: `TOOCS.docker`
+> #### /!\ This role has been renamed - Old name: `FlorianKempenich.docker` /!\
+
 Install Docker on Ubuntu. And optionally `docker-compose` and `docker-machine`.
 Also sets up completion for `zsh`
 
@@ -26,17 +28,17 @@ To install only install `docker`:
 
     - hosts: sandbox
       roles:
-         - FlorianKempenich.toocs_docker
+         - TOOCS.docker
 
 To install `docker-compose` / `docker-machine`:
 
     - hosts: sandbox
       tasks:
         - include_role:
-            name: FlorianKempenich.toocs_docker
+            name: TOOCS.docker
             tasks_from: dockercompose.yml
         - include_role:
-            name: FlorianKempenich.toocs_docker
+            name: TOOCS.docker
             tasks_from: dockermachine.yml
 
 To install a specific version of `docker-compose` / `docker-machine`:
@@ -44,7 +46,7 @@ To install a specific version of `docker-compose` / `docker-machine`:
     - hosts: sandbox
       tasks:
         - include_role:
-            name: FlorianKempenich.toocs_docker
+            name: TOOCS.docker
             tasks_from: dockercompose.yml
           vars:
             docker_compose_version: '1.17.0'
