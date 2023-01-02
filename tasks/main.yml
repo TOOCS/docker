@@ -8,14 +8,15 @@
   block:
     - name: "Install requirements"
       apt:
-        name: "{{ item }}"
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - software-properties-common
+          - lsb-release
         update_cache: yes
         state: latest
-      with_items:
-        - apt-transport-https
-        - ca-certificates
-        - curl
-        - software-properties-common
 
     - name: "Add docker GPG key"
       apt_key:
@@ -30,7 +31,11 @@
 
     - name: "Install Docker-CE"
       apt:
-        name: docker-ce
+        name: 
+          - docker-ce
+          - docker-ce-cli 
+          - containerd.io 
+          - docker-compose-plugin
         update_cache: yes
         state: latest
 
